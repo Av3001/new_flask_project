@@ -1,0 +1,14 @@
+services:
+
+  python-app:
+    image: av3001/python-app:2.0
+    build:
+      context: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - python_data:/var/lib/pythondata
+
+volumes:
+  python_data: { }
+  wordpress_data: { }
