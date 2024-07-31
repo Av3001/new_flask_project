@@ -38,6 +38,19 @@ steps {
     }
     }
 }
-
 }
+
+stage('Docker Build') {
+            steps {
+                script{
+                if(isUnix()){
+                sh "docker build -t  av3001/newflaskapp ."
+                }    
+                else{
+                 bat "docker build -t av3001/newflaskapp ."
+                 }
+                 }
+
+            }
+        }
 }}
