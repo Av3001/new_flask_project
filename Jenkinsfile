@@ -55,7 +55,7 @@ stage('Docker Build') {
         }
 stage('Docker Push') {
             steps {
-               withCredentials([usernamePassword(credentialsId:'dockerHub',passwordVariable: 'dockerHubPassword',usernameVariable:'dockerHubUser')]){
+               withCredentials([usernamePassword(credentialsId:'dockerhub',passwordVariable: 'dockerHubPassword',usernameVariable:'dockerHubUser')]){
                 bat "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
                 bat "docker push av3001/newflaskapp:latest"
                 }    
