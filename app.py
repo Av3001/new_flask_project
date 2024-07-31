@@ -9,7 +9,7 @@ def hello_world():  # put application's code here
     return 'Hello World!'
 
 
-@app.route('api/v1/products')
+@app.route('/api/products')
 def getAllProducts():
     return make_response(jsonify({"products": db}), 200)
 
